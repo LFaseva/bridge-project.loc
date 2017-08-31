@@ -1,0 +1,29 @@
+ @font-face {
+    font-family: Circe; /* Имя шрифта */
+    src: url(../fonts/CRC25.otf); /* Путь к файлу со шрифтом */
+    font-weight: 400;
+}
+
+ @font-face {
+    font-family: Circe; /* Имя шрифта */
+    src: url(../fonts/CRC35.otf); /* Путь к файлу со шрифтом */
+    font-weight: 500;
+}
+
+ @font-face {
+    font-family: Circe; /* Имя шрифта */
+    src: url(../fonts/CRC55.otf); /* Путь к файлу со шрифтом */
+    font-weight: 600;
+}
+
+ @font-face {
+    font-family: Circe; /* Имя шрифта */
+    src: url(../fonts/Circe-Bold.otf); /* Путь к файлу со шрифтом */
+    font-weight: 700;
+}
+
+ @font-face {
+    font-family: Circe; /* Имя шрифта */
+    src: url(../fonts/Circe-ExtraBold.otf); /* Путь к файлу со шрифтом */
+    font-weight: 800;
+}
