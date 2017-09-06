@@ -152,7 +152,7 @@
       > div {
         text-align: center;
         max-width: 90vw;
-        max-height: 100vh;
+        max-height: 120vh;
         opacity: 0;
         transition: opacity @anim-duration ease;
         overflow-y: auto;
@@ -264,6 +264,7 @@ img{
 }
 .navigationMenu{
   display:flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 .caption{
@@ -276,11 +277,13 @@ img{
   flex-direction:column;
   font-size:16px;
   text-align:left;
-  padding: 0 10px;
   max-width:230px;
   li{
     margin-top:15px;
   }
+}
+.navBridge{
+  margin-top: -30px;
 }
 .menu-link:hover a{
   border-bottom:1px solid @white;
@@ -308,25 +311,129 @@ img{
 .file-pdf:hover:after{
   content: none;
 }
-@media(max-width:900px){
-  .headerMenu-link{
-    margin-left:20px;
-  }
-  .menu-link:hover:after{
-    content:none;
-  }
+.navMenu{
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 10px;
+  width:25%;
 }
-@media(max-width:770px){
-  .navigationMenu{
-    flex-direction:column;
+@media(max-width:800px){
+  .navMenu{
+    width:50%;
   }
   .menuBlock{
-    flex-direction:row;
+    li{
+      margin-top: 5px;
+    }
+    .caption{
+      margin-top: 5px;
+    }
   }
-  #header-menu{
-    overflow-x: hidden;
+  .menu-link:hover:after {
+    content: none;
+    padding-left: 0px;
+  }
+  .caption{
+    margin: 10px 0;
+  }
+  .navBridge{
+    margin-top: -15px;
+  }
+  .headerMenu{
+    margin-bottom: 20px;
+  }
+  .header-menu__footer{
+    margin: 10px 0 0;
+  }
+  .headerMenu .sliderTop-logo__text{
+    display:none;
+  }
+  .headerMenu .headerMenu-link{
+    margin: 0 25px 0 0 ;
   }
 }
+@media(max-width:550px){
+  .navMenu{
+    width:100%;
+  }
+  .navMenu{
+    align-items: center;
+  }
+  .navBridge{
+    margin:0;
+  }
+  #header-menu{
+   min-height: 600px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+ }
+ .headerMenu{
+   flex-direction: column;
+ }
+  .headerMenu .headerMenu-link{
+     padding: 5px;
+     margin: 5px 0 ;
+    transition: background 1s;
+   }
+
+  .headerMenu .headerMenu-link:hover{
+    border-bottom: none;
+    background: @grey;
+    width:100%;
+  }
+  .navigationMenu{
+    margin-top:  -35px;
+  }
+  .navMenu:first-child{
+    border-top: 1px solid @white;
+}
+  .navMenu{
+    border-bottom: 1px solid @white;
+    transition: background 1s;
+  }
+  .navMenu:hover{
+      background: @white;
+  }
+  .menuBlock{
+    margin-left: -900px;
+    transition: margin 1s;
+    text-align: center;
+    padding: 10px 0;
+    max-width: 100%;
+    position:absolute;
+   }
+  #header-menu .menuBlock .menu-link a{
+    color: @grey !important;
+    border-bottom: 1px solid @grey;
+    transition: border-bottom 1s;
+  }
+  #header-menu .menuBlock .menu-link a:hover{
+    border-bottom: none;
+  }
+  .navMenu:hover .menuBlock{
+    margin-left: 0;
+    position: static;
+  }
+
+}
+@media(max-width:400px){
+  .outer-menu{
+    .menu {
+      > div {
+        width: 300vw;
+        height: 300vw;
+      }
+    }
+  }
+.header-menu__footer{
+  flex-direction:column;
+  align-items: center;
+  justify-content:center;
+}
+}
+
 /*=======slider-top=====*/
 .sliderTop{
   display:flex;
@@ -482,6 +589,7 @@ img{
   display: inline-flex;
   img{
     width:20px;
+    height: 20px;
     margin-left:25px;
   }
 }
@@ -504,10 +612,12 @@ img{
 }
 .socialNetworks{
   transition: transform 1s;
+
 }
 .socialNetworks:hover{
   transform: scale(1.2);
 }
+
 @media(max-width:400px){
   .sliderTop{
     align-items: flex-start;
@@ -1011,6 +1121,7 @@ footer{
   font-size: 18px;
   margin:0 auto 130px;
   text-align: center;
+
 }
 .footerlink:not(.not-border){
   border-left: 1px solid @white;
@@ -1057,7 +1168,8 @@ footer{
   }
   .footerlink{padding: 0 10px;}
   .footer-slogan{width:100%;
-  text-align: center}
+  text-align: center;
+  }
 }
 @media(max-width:720px){
   .footerLinks{
@@ -1067,6 +1179,9 @@ footer{
   }
   .footerlink{
     margin-top: 5px;
+  }
+  .footerlink:not(.not-border) {
+    border-left: none;
   }
 }
 @media(max-width:670px){
@@ -1080,8 +1195,23 @@ footer{
 @media(max-width:480px){
   .footer-link{
     margin: 0;
+    flex-direction:column;
+
+    padding: 10px 0;
+    .footer-link__menu{
+      background: @grey;
+      margin: 5px 0;
+      color:@white;
+      padding:5px 0;
+      transition: color, background 1s;
+    }
+    .footer-link__menu:hover{
+      color:@grey;
+      background:@white ;
+    }
   }
   .footer-slogan{
     font-size: 24px;
   }
 }
+
