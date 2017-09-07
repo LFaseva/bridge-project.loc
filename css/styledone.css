@@ -98,7 +98,7 @@
     width: 60px;
     height: 60px;
     padding: .5em 1em;
-    background: rgba(58, 62, 77, 0.75);
+    background: #1c42cf;
     -moz-border-radius: 0 0.12em 0.12em 0;
     border-radius: 0 0.12em 0.12em 0;
     cursor: pointer;
@@ -245,7 +245,7 @@
 .outer-menu .menu > div > div {
     text-align: center;
     max-width: 90vw;
-    max-height: 120vh;
+    max-height: 100vh;
     opacity: 0;
     -webkit-transition: opacity 0.4s ease;
     -o-transition: opacity 0.4s ease;
@@ -336,7 +336,6 @@ img {
 #header-menu {
     display: block;
     width: 1290px;
-    background-color: #3a3e4d;
 }
 .headerMenu {
     display: -webkit-box;
@@ -576,12 +575,12 @@ img {
         -o-transition: background 1s;
         -moz-transition: background 1s;
         transition: background 1s;
+        cursor: pointer;
     }
     .navMenu:hover {
         background: #fff;
     }
     .menuBlock {
-        margin-left: -900px;
         -webkit-transition: margin 1s;
         -o-transition: margin 1s;
         -moz-transition: margin 1s;
@@ -589,7 +588,7 @@ img {
         text-align: center;
         padding: 10px 0;
         max-width: 100%;
-        position: absolute;
+        display: none;
     }
     #header-menu .menuBlock .menu-link a {
         color: #82848c !important;
@@ -602,9 +601,8 @@ img {
     #header-menu .menuBlock .menu-link a:hover {
         border-bottom: none;
     }
-    .navMenu:hover .menuBlock {
-        margin-left: 0;
-        position: static;
+    .openMenu {
+        display: block;
     }
 }
 @media (max-width: 400px) {
@@ -1438,8 +1436,6 @@ img {
 .news-btn {
     display: block;
     margin: 70px auto;
-    width: 100%;
-    text-align: center;
 }
 @media (max-width: 800px) {
     .newsBlock {
@@ -1617,14 +1613,10 @@ footer {
     font-size: 18px;
     margin: 0 auto 130px;
     text-align: center;
-
-}
-.footerlink{
-    padding: 0 10px;
 }
 .footerlink:not(.not-border) {
     border-left: 1px solid #fff;
-
+    padding-left: 10px;
 }
 .footer-link__menu {
     text-decoration: underline;
