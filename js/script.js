@@ -1,7 +1,10 @@
-//Custom JS
-$(document).ready(function(){
-    $('a.target-burger').click(function(e){
-        $('div.container, nav.main-nav, a.target-burger').toggleClass('toggled');
-        e.preventDefault();
-    });//target-burger-click
-});//doc-rdy
+window.onload = function(){
+
+    var btn_Menu = document.querySelector('.caption');
+    var mobile_Menu = document.querySelector('.menuBlock');
+
+    btn_Menu.onclick = function(){
+        mobile_Menu.classList.toggle('openMenu');
+    }
+
+}
